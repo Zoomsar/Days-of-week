@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week Warrior</title>
+</head>
+<body>
+    <h1>Hey, it's a weekday, its time to wrok blyat!</h1>
+    <img src="images/nuu_spungbob.jpg">
+
+    <h2>Listen to Some Music:</h2>
+    <audio controls>
+        <source src="audio/pink.mp3" type="audio/mpeg"> <!-- Update the path to your audio file here -->
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Optional: Add a play button for additional controls -->
+    <button onclick="document.getElementById('audio-player').play()">Play</button>
+    <button onclick="document.getElementById('audio-player').pause()">Pause</button>
+
+    <script>
+        // Get the audio element
+        const audioElement = document.createElement('audio');
+        audioElement.id = 'audio-player';
+        audioElement.src = 'audio/pink.mp3'; // Update the path accordingly
+    </script>
+</body>
+</html>
