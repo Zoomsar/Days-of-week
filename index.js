@@ -17,7 +17,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get("/", (req,res) => {
     const today = new Date();
     const day = today.getDay();
-    // console.log(day);
+    console.log("Today is: ", today.toString());;
     let type = "a weekday";
     let adv = "its time to wrok blyat";
     let a1 = "images/nuu_spungbob.jpg";
