@@ -1,0 +1,114 @@
+:root {
+    --card-width: 450px; /* Adjust this as needed */
+    --card-height: 600px; /* Adjust this as needed */
+    --rotate: to bottom; /* You can adjust this direction */
+  }
+  
+  body {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    color: white;
+    font-family: "Titan One", cursive;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: var(--card-width);
+    height: var(--card-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgba(88, 199, 250, 0);
+    font-family: "Gloria Hallelujah", cursive;
+    overflow: hidden; /* Prevents overflow from child elements */
+  }
+  
+  .card:hover {
+    color: rgba(88, 199, 250, 1); /* Change color on hover */
+    transition: color 1s;
+  }
+  
+  .card:hover::before,
+  .card:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+  
+  .card::before {
+    content: "";
+    width: 115%;
+    height: 110%;
+    border-radius: 8px;
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    position: absolute;
+    z-index: -1;
+    top: -5%;
+    left: -5%;
+    animation: spin 10s linear infinite;
+  }
+  
+  .card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(
+      var(--rotate),
+      #5ddcff,
+      #3c67e3 43%,
+      #4e00c2
+    );
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 10s linear infinite;
+  }
+  
+
+
+  /* Animation for the gradient spin */
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  p, h2 {
+    color: red;
+  }
+
+img {
+    height: 590px;
+}
